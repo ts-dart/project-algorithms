@@ -12,7 +12,8 @@ def study_schedule(permanence_period, target_time):
 
 def filters(period, target_time):
     result = ''
-    if isinstance(period[0], str) or isinstance(period[1], str)\
+    if isinstance(period[0], str)\
+        or isinstance(period[1], str)\
             or isinstance(target_time, tuple):
         result = None
 
