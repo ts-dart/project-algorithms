@@ -24,16 +24,15 @@ def my_sort(string):
 
     sort_str = list(string)
 
-    for i in range(1, len(sort_str)):
-        key_item = sort_str[i]
-        j = i - 1
+    for i in range(len(sort_str)):
+        already_sorted = True
+        for j in range(len(sort_str) - i - 1):
+            if sort_str[j] > sort_str[j + 1]:
+                sort_str[j], sort_str[j + 1] = sort_str[j + 1], sort_str[j]
+                already_sorted = False
 
-        while j >= 0 and sort_str[j] > key_item:
-            sort_str[j + 1] = sort_str[j]
-            j -= 1
-
-        sort_str[j + 1] = key_item
-
+        if already_sorted:
+            break
     return ''.join(sort_str)
 
 
